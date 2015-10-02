@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: podota_dev
+  pool: 5
+  username: pg_username
+  password: pg_password
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: podota_test
+  pool: 5
+  username: pg_username
+  password: pg_password
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: podota
+  pool: 5
+  username: pg_username
+  password: pg_password
