@@ -22,3 +22,8 @@
 # Version of ruby & gemset
 .ruby-gemset
 .ruby-version
+
+# Postgres specific files
+pg_upgrade_internal.log
+pg_upgrade_server.log
+pg_upgrade_utility.log
