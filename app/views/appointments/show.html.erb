@@ -1,13 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Client:</strong>
+  <strong>Ονοματεπώνυμο:</strong>
   <%= @appointment.client.last_name %>
 </p>
 <p>
-  <strong>Price:</strong>
+  <strong>Ημερομηνία:</strong>
+  <%= @appointment.date %>
+</p>
+<p>
+  <strong>Σημείο:</strong>
+  <%= @appointment.area.name %>
+</p>
+<p>
+  <strong>Τιμή:</strong>
   <%= @appointment.price %>
 </p>
 
-<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
-<%= link_to 'Back', appointments_path %>
+<%= link_to 'Επεξεργασία', edit_appointment_path(@appointment) %> |
+<%= link_to 'Όλα τα ραντεβού', appointments_path %>

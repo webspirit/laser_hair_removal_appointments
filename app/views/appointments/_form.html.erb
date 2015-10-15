@@ -12,15 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :client_id %><br>
+    <%= f.label :client_id, 'Ονοματεπώνυμο' %><br>
+    <%= f.collection_select :client_id, Client.order(:last_name),:id,:last_name, include_blank: true %>
+    <p>(Δεν υπάρχει στη λίστα; <%= link_to 'Δημιουργία νέου ασθενή', new_client_path if @appointment.new_record? %>)</p>
+  </div>
+  <div class="field">
+    <%= f.label :date, 'Ημερομηνία' %><br>
+    <%= select_date Date.today, prefix: :date %>
+  </div>
+  <div class="field">
+    <%= f.label :area_id, 'Περιοχή' %><br>
     <%= f.collection_select :client_id, Client.order(:last_name),:id,:last_name, include_blank: true %>
   </div>
-
   <div class="field">
-    <%= f.label :price %><br>
+    <%= f.label :price, 'Τιμή' %><br>
     <%= f.text_field :price %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Αποθήκευση' %>
   </div>
 <% end %>

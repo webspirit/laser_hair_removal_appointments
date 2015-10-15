@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'appointments#new'
+  # root to: 'appointments#new'
+  root to: 'pages#home'
   devise_for :users
   resources :clients
   resources :appointments

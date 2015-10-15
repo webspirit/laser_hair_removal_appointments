@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First name:</strong>
+  <strong>Όνομα:</strong>
   <%= @client.first_name %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
+  <strong>Επώνυμο:</strong>
   <%= @client.last_name %>
 </p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<%= link_to 'Επεξεργασία', edit_client_path(@client) %> |
+<%= link_to 'Όλοι οι ασθενείς', clients_path %>
