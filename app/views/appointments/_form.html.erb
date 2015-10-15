@@ -22,7 +22,7 @@
   </div>
   <div class="field">
     <%= f.label :area_id, 'Περιοχή' %><br>
-    <%= f.collection_select :client_id, Client.order(:last_name),:id,:last_name, include_blank: true %>
+    <%= f.collection_select :area_id, Area.order(:name),:id,:name, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :price, 'Τιμή' %><br>
