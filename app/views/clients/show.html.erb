@@ -1,20 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-4 col-sm-offset-4">
+	<p id="notice"><%= notice %></p>
 
-<h1>Προβολή ασθενή</h1>
+  <h2 class="centered">Εμφάνιση ασθενή</h2>
 
-<p>
-  <strong>Όνομα:</strong>
-  <%= @client.first_name %>
-</p>
+	<table class="table table-striped table-bordered">
+		<tbody>
+      <tr>
+        <th>Όνομα</th>
+        <td><%= @client.first_name %></td>
+      </tr>
 
-<p>
-  <strong>Επώνυμο:</strong>
-  <%= @client.last_name %>
-</p>
+      <tr>
+      	<th>Επώνυμο</th>
+      	<td><%= @client.last_name %></td>
+      </tr>
 
-<p>
-  <strong>Τηλέφωνο:</strong>
-  <%= @client.telephone %>
-</p>
-<%= link_to 'Προηγούμενα ραντεβού', all_appointments_path(@client) %> | 
-<%= link_to 'Επεξεργασία', edit_client_path(@client) %>
+      <tr>
+      	<th>Τηλέφωνο</th>
+      	<td><%= @client.try(:telephone) %></td>
+      </tr>
+    </tbody>
+	</table>
+	
+	<div class="buttons centered">
+    <%= link_to 'Επεξεργασία', edit_client_path(@client), class: "btn btn-warning" %>
+		<%= link_to 'Διαγραφή', @client, method: :delete,  class: "btn btn-danger", data: { confirm: 'Προσοχή! Θέλετε να διαγράψετε τον ασθενή και όλα τα ραντεβού του;' } %>
+	</div>
+	<div class="buttons centered">
+		<%= link_to 'Προηγούμενα ραντεβού', all_appointments_path(@client), class: "centered btn btn-primary" %>
+	</div>
+</div>

@@ -11,19 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :first_name, 'Όνομα' %><br>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class: "col-sm-12 form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :last_name, 'Επώνυμο' %><br>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, class: "col-sm-12 form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :telephone, 'Τηλέφωνο' %><br>
-    <%= f.text_field :telephone %>
+    <%= f.text_field :telephone, class: "col-sm-12 form-control" %>
   </div>
+
   <div class="actions">
-    <%= f.submit 'Αποθήκευση' %>
+    <%= f.submit 'Αποθήκευση', class: "col-sm-12 col-md-4 col-md-offset-4 btn btn-primary" %>
   </div>
 <% end %>
