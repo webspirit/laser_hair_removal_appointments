@@ -13,8 +13,8 @@
 
   <div class="field">
     <%= f.label :client_id, 'Ονοματεπώνυμο' %><br>
-    <%= f.collection_select :client_id, Client.order(:last_name), :id, :last_name, include_blank: true, selected: params[:id] %>
-    <p>(Δεν υπάρχει στη λίστα; <%= link_to 'Δημιουργία νέου ασθενή', new_client_path if @appointment.new_record? %>)</p>
+    <%= f.collection_select :client_id, Client.order(:last_name), :id, :last_name, { prompt: "Επιλογή Ασθενή", selected: params[:id]}, {class: "col-sm-12 form-control" } %>
+    <p class="new_client col-sm-12">(Δεν υπάρχει στη λίστα; <%= link_to 'Δημιουργία νέου ασθενή', new_client_path, class: "link" if @appointment.new_record? %>)</p>
   </div>
 
 
@@ -28,9 +28,9 @@
   </div>
   <div class="field">
     <%= f.label :price, 'Τιμή' %><br>
-    <%= f.text_field :price %>
+    <%= f.text_field :price, class: "col-sm-12" %>
   </div>
   <div class="actions">
-    <%= f.submit 'Αποθήκευση' %>
+    <%= f.submit 'Αποθήκευση', class: "col-sm-12 col-md-4 col-md-offset-4 btn btn-primary" %>
   </div>
 <% end %>

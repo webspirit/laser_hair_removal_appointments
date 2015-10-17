@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: #EAEAE6 !important;
+}
+
+.btn:visited { color: white; }
+
+.container h1 { margin: 30px; }

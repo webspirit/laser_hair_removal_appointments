@@ -1,0 +1,25 @@
+.menu {
+	overflow: auto;
+	.buttons {
+		float: right;
+	}
+}
+
+.buttons a { margin: 10px; }
+
+.home_page {
+	.buttons a { width: 90px; }
+}
+
+.centered {
+	text-align: center; 
+}
+
+.link { 
+	text-decoration: underline;
+	&:hover {
+		background-color: transparent;
+	  color: #333;
+	}
+}
+
