@@ -17,6 +17,11 @@
     </thead>
 
     <tbody>
+      <% if @appointments.empty? %>
+        <tr class="centered">
+          <td colspan="6">Ο συγγεκριμένος ασθενής δεν έχει προηγούμενα ραντεβού</td>
+        </tr>
+      <% end %>
       <% @appointments.each do |appointment| %>
         <tr>
           <td><%= link_to appointment.client.full_name, client_path(appointment.client), class: "link" %></td>

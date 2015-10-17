@@ -1,0 +1,36 @@
+el:
+  error: Λάθος
+  errors: Λάθη
+  activerecord:
+    models:
+      client: Ο Ασθενής
+      appointment:  Το Ραντεβού
+    attributes:
+      appointment:
+        price: Η τιμή
+        date: Η ημερομηνία
+        client: Ο ασθενής
+        area: Το σημείο
+      client:
+        first_name: Το όνομα 
+        last_name: To επώνυμο
+        full_name: Τo oνοματεπώνυμο
+        telephone: Τo τηλέφωνο
+    errors:
+      models:
+        client:
+          attributes:
+            first_name:
+              blank: δεν πρέπει να είναι κενό.
+            last_name:
+              blank: δεν πρέπει να είναι κενό.
+        appointment:
+          attributes:
+            client: 
+              blank: δεν πρέπει να είναι κενός.
+            price:
+              blank: δεν πρέπει να είναι κενή.
+            area: 
+              blank: δεν πρέπει να είναι κενό.
+            date: 
+              blank: δεν πρέπει να είναι κενή.
