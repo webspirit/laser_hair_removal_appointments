@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Προβολή ασθενή</h1>
+
 <p>
   <strong>Όνομα:</strong>
   <%= @client.first_name %>
@@ -10,5 +12,9 @@
   <%= @client.last_name %>
 </p>
 
-<%= link_to 'Επεξεργασία', edit_client_path(@client) %> |
-<%= link_to 'Όλοι οι ασθενείς', clients_path %>
+<p>
+  <strong>Τηλέφωνο:</strong>
+  <%= @client.telephone %>
+</p>
+<%= link_to 'Προηγούμενα ραντεβού', all_appointments_path(@client) %> | 
+<%= link_to 'Επεξεργασία', edit_client_path(@client) %>

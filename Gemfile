@@ -40,6 +40,8 @@ group :development, :test do
   gem 'byebug'
   # A library for generating fake data such as names, addresses, and phone numbers
   gem 'faker'
+	# An IRB alternative and runtime developer console
+  gem 'pry'
 end
 
 group :development do

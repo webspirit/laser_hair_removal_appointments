@@ -13,9 +13,11 @@
 
   <div class="field">
     <%= f.label :client_id, 'Ονοματεπώνυμο' %><br>
-    <%= f.collection_select :client_id, Client.order(:last_name),:id,:last_name, include_blank: true %>
+    <%= f.collection_select :client_id, Client.order(:last_name), :id, :last_name, include_blank: true, selected: params[:id] %>
     <p>(Δεν υπάρχει στη λίστα; <%= link_to 'Δημιουργία νέου ασθενή', new_client_path if @appointment.new_record? %>)</p>
   </div>
+
+
   <div class="field">
     <%= f.label :date, 'Ημερομηνία' %><br>
     <%= select_date Date.today, prefix: :date %>

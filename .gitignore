@@ -27,3 +27,9 @@
 pg_upgrade_internal.log
 pg_upgrade_server.log
 pg_upgrade_utility.log
+
+# Bundler writes a snapshot of all of the gems and versions
+Gemfile.lock
+
+# OS X storing custom attributes of a folder such as the position of icons or the choice of a background image.
+**/.DS_Store

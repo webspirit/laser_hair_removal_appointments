@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Όλα τα ραντεβού</h1>
+<h1>Προηγούμενα ραντεβού ασθενή</h1>
 
 <table>
   <thead>
@@ -9,20 +9,19 @@
       <th>Ημερομηνία</th>
       <th>Σημείο</th>
       <th>Τιμή</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @appointments.each do |appointment| %>
       <tr>
-        <td><%= appointment.client.last_name %></td>
+        <td><%= link_to appointment.client.last_name, client_path(appointment.client)%></td>
         <td><%= appointment.date %></td>
         <td><%= appointment.area.name %></td>        
         <td><%= appointment.price %></td>
-        <td><%= link_to 'Εμφάνιση', appointment %></td>
         <td><%= link_to 'Επεξεργασία', edit_appointment_path(appointment) %></td>
-        <td><%= link_to 'Διαγραφή', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Διαγραφή', appointment, method: :delete, data: { confirm: 'Προσοχή! Θέλετε να διαγράψετε το ραντεβού;' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +29,4 @@
 
 <br>
 
-<%= link_to 'Νέο ραντεβού', new_appointment_path %>
+<%= link_to 'Νέο ραντεβού', new_appointment_path(id: @appointments.first.client) %>

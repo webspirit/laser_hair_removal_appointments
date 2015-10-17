@@ -10,12 +10,11 @@
 </p>
 <p>
   <strong>Σημείο:</strong>
-  <%= @appointment.area.name %>
+  <%= @appointment.try(:area).try(:name) %>
 </p>
 <p>
   <strong>Τιμή:</strong>
   <%= @appointment.price %>
 </p>
 
-<%= link_to 'Επεξεργασία', edit_appointment_path(@appointment) %> |
-<%= link_to 'Όλα τα ραντεβού', appointments_path %>
+<%= link_to 'Επεξεργασία', edit_appointment_path(@appointment) %>
