@@ -2,12 +2,9 @@
 	h2 {
 		text-align: center;
 	}
-	.password_field {
-		margin: 50px 0;
-	}
 }
-
-.field {
-	margin: 25px 0;
-	overflow: auto;
+.form-group {
+	margin: 20px 0;
+	display: block;
+  overflow: auto;
 }

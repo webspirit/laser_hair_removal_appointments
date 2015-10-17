@@ -1,20 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-4 col-sm-offset-4">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Ονοματεπώνυμο:</strong>
-  <%= @appointment.client.last_name %>
-</p>
-<p>
-  <strong>Ημερομηνία:</strong>
-  <%= @appointment.date %>
-</p>
-<p>
-  <strong>Σημείο:</strong>
-  <%= @appointment.try(:area).try(:name) %>
-</p>
-<p>
-  <strong>Τιμή:</strong>
-  <%= @appointment.price %>
-</p>
+  <h2 class="centered">Εμφάνιση ραντεβού</h2>
 
-<%= link_to 'Επεξεργασία', edit_appointment_path(@appointment) %>
+	<table class="table table-striped table-bordered">
+		<tbody>
+      <tr>
+        <th>Ονοματεπώνυμο</th>
+        <td><%= link_to @appointment.client.full_name, client_path(@appointment.client), class: "link" %></td>
+      </tr>
+
+      <tr>
+      	<th>Ημερομηνία</th>
+      	<td><%= @appointment.date %></td>
+      </tr>
+
+      <tr>
+      	<th>Σημείο</th>
+      	<td><%= @appointment.try(:area).try(:name) %></td>
+      </tr>
+
+      <tr>
+      	<th>Τιμή</th>
+      	<td><%= @appointment.price %></td>
+      </tr>
+    </tbody>
+	</table>
+	
+	<div class="buttons centered">
+		<%= link_to 'Επεξεργασία', edit_appointment_path(@appointment), class: "btn btn-warning" %>
+		<%= link_to 'Διαγραφή', @appointment, method: :delete,  class: "btn btn-danger", data: { confirm: 'Προσοχή! Θέλετε να διαγράψετε το ραντεβού;' } %>
+	</div>
+</div>

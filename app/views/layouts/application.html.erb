@@ -10,10 +10,15 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 		<!-- Scalable vector icons  -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker.standalone.min.css">
 
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!-- Plugin for datepicker -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/locales/bootstrap-datepicker.el.min.js"></script>
+		
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
@@ -21,5 +26,14 @@
 			<%= render 'pages/menu' %>
 			<%= yield %>
 		</div>
+		<script type="text/javascript">
+      $(function () {
+        $('#sandbox-container input').datepicker({
+        		format: "dd/mm/yyyy",
+				    language: "el",
+				    todayHighlight: true
+					});
+        });
+    </script>
 	</body>
 </html>

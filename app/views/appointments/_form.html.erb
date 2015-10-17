@@ -11,24 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :client_id, 'Ονοματεπώνυμο' %><br>
-    <%= f.collection_select :client_id, Client.order(:last_name), :id, :last_name, { prompt: "Επιλογή Ασθενή", selected: params[:id]}, {class: "col-sm-12 form-control" } %>
-    <p class="new_client col-sm-12">(Δεν υπάρχει στη λίστα; <%= link_to 'Δημιουργία νέου ασθενή', new_client_path, class: "link" if @appointment.new_record? %>)</p>
+    <%= f.collection_select :client_id, Client.order(:full_name), :id, :full_name, { prompt: "Επιλογή Ασθενή", selected: params[:id]}, {class: "col-sm-12 form-control" } %>
+    <% if @appointment.new_record? %>
+      <p class="new_client col-sm-12">(Δεν υπάρχει στη λίστα; <%= link_to 'Δημιουργία νέου ασθενή', new_client_path, class: "link" %>)</p>
+    <% end %>
   </div>
 
-
-  <div class="field">
+  <div class="form-group">
     <%= f.label :date, 'Ημερομηνία' %><br>
-    <%= select_date Date.today, prefix: :date %>
+      <div class='input-group date' id='sandbox-container' >
+        <%= f.text_field :date, class: "form-control"  %>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
   </div>
-  <div class="field">
+
+  <div class="form-group">
     <%= f.label :area_id, 'Περιοχή' %><br>
-    <%= f.collection_select :area_id, Area.order(:name),:id,:name, include_blank: true %>
+    <%= f.collection_select :area_id, Area.order(:name), :id, :name, { include_blank: true }, {class: "col-sm-12 form-control" } %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :price, 'Τιμή' %><br>
-    <%= f.text_field :price, class: "col-sm-12" %>
+    <%= f.text_field :price, class: "col-sm-12 form-control" %>
   </div>
   <div class="actions">
     <%= f.submit 'Αποθήκευση', class: "col-sm-12 col-md-4 col-md-offset-4 btn btn-primary" %>
