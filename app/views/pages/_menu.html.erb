@@ -3,3 +3,6 @@
 	<%= link_to 'Όλα τα ραντεβού', appointments_path %>
 	<%= link_to 'Όλοι οι ασθενείς', clients_path %>
 <% end %>
+
+<!-- Show logout link if user is logged in -->
+<%= link_to 'Αποσύνδεση', destroy_user_session_path, method: :delete if user_signed_in?%>
