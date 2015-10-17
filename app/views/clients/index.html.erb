@@ -18,6 +18,7 @@
         <td><%= client.last_name %></td>
         <td><%= link_to 'Εμφάνιση', client %></td>
         <td><%= link_to 'Επεξεργασία', edit_client_path(client) %></td>
+        <td><%= link_to 'Προηγούμενα ραντεβού', all_appointments_path(client) %></td>
         <td><%= link_to 'Διαγραφή', client, method: :delete, data: { confirm: 'Προσοχή! Θα διαγράψετε τον ασθενή και όλα τα ραντεβού του.' } %></td>
       </tr>
     <% end %>

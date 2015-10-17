@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :clients
   resources :appointments
+  
+  get '/client_appointments/:id', to: 'appointments#client_appointments', as: 'all_appointments'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
