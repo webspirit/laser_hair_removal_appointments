@@ -1,1 +1,5 @@
 el:
+  devise:
+    sessions:
+      user:
+        signed_in: Συνδεθήκατε με επιτυχία
