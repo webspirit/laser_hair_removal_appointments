@@ -1,5 +1,5 @@
-<!-- Don't show links if you're at home page -->
-<% unless params[:controller] = "page" && params[:action] == "home"%>
+<!-- Don't show links if you're at home or login page -->
+<% unless params[:controller] == "pages" || params[:controller] == "devise/sessions" %>
 	<%= link_to 'Όλα τα ραντεβού', appointments_path %>
 	<%= link_to 'Όλοι οι ασθενείς', clients_path %>
 <% end %>
