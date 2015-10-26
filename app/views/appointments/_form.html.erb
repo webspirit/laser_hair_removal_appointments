@@ -35,6 +35,10 @@
     <%= f.label :price, 'Τιμή' %><br>
     <%= f.text_field :price, class: "col-sm-12 form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label :notes, 'Σημειώσεις' %><br>
+    <%= f.text_area :notes, class: "col-sm-12 form-control" %>
+  </div>
   <div class="actions">
     <%= f.submit 'Αποθήκευση', class: "col-sm-12 col-md-4 col-md-offset-4 btn btn-primary" %>
   </div>

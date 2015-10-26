@@ -1,4 +1,4 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
   <p id="notice"><%= notice %></p>
 
   <%= link_to 'Νέο ραντεβού', new_appointment_path, class: "btn btn-primary" %>
@@ -10,8 +10,9 @@
       <tr>
         <th>Ονοματεπώνυμο</th>
         <th>Ημερομηνία</th>
-        <th>Σημείο</th>
+        <th>Σημεία</th>
         <th>Τιμή</th>
+        <th>Σημειώσεις</th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -23,6 +24,7 @@
           <td><%= appointment.date %></td>
           <td><%= appointment.try(:area).try(:name) %></td>        
           <td><%= appointment.price %></td>
+          <td><%= appointment.notes %></td>
           <td><%= link_to 'Επεξεργασία', edit_appointment_path(appointment), class: "btn btn-warning" %></td>
           <td><%= link_to 'Διαγραφή', appointment, method: :delete,  class: "btn btn-danger", data: { confirm: 'Προσοχή! Θέλετε να διαγράψετε το ραντεβού;' } %></td>
         </tr>

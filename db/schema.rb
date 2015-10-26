@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20151017134652) do
     t.date     "date"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.text     "notes"
     t.integer  "client_id"
     t.integer  "area_id"
   end
