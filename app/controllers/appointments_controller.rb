@@ -80,12 +80,16 @@ class AppointmentsController < ApplicationController
 
     # Couldn't find out what's wrong with nested attributes - doing it 'manually'
     def appointment_areas
-      @appointment.appointment_areas.destroy_all
-      @appointment_areas = @appointment.appointment_areas.build
       ids = params[:appointment][:areas][:id].map(&:to_i)
       ids.pop if ids[-1] == 0
-      ids.each do |id|
-        @appointment.appointment_areas.build(area_id: id)
+
+      unless ids.empty?
+        @appointment.appointment_areas.destroy_all
+        @appointment_areas = @appointment.appointment_areas.build
+        
+        ids.each do |id|
+          @appointment.appointment_areas.build(area_id: id)
+        end
       end
     end
 end

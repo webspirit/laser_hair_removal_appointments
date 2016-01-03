@@ -5,11 +5,15 @@
 
   <h1 class="centered">Όλοι οι ασθενείς</h1>
 
-  <table class="table table-striped table-bordered">
+  <div class="form-group col-md-4 row">
+    <label for="search col-md-4">Αναζήτηση: </label>
+    <input type="search" class="light-table-filter form-control col-md-8" data-table="order-table" data-table-columns="1" placeholder="Όνομα">
+  </div>
+
+  <table class="order-table table table-striped table-bordered">
     <thead>
       <tr>
-        <th>Όνομα</th>
-        <th>Επώνυμο</th>
+        <th>Ονοματεπώνυμο</th>
         <th>Τηλέφωνο</th>
         <th colspan="3"></th>
       </tr>
@@ -18,11 +22,10 @@
     <tbody>
       <% @clients.each do |client| %>
         <tr>
-          <td><%= client.first_name %></td>
-          <td><%= client.last_name %></td>
+          <td><%= client.full_name %></td>
           <td><%= client.telephone %></td>
           <td><%= link_to 'Επεξεργασία', edit_client_path(client), class: "btn btn-warning" %></td>
-          <td><%= link_to 'Προηγούμενα ραντεβού', all_appointments_path(client), class: "btn btn-warning" %></td>
+          <td><%= link_to 'Προηγούμενα ραντεβού', all_appointments_path(client), class: "btn btn-primary" %></td>
           <td><%= link_to 'Διαγραφή', client, method: :delete,  class: "btn btn-danger", data: { confirm: 'Προσοχή! Θέλετε να διαγράψετε τον ασθενή και όλα τα ραντεβού του;' } %></td>
         </tr>
       <% end %>
