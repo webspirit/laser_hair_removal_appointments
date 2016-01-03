@@ -8,6 +8,5 @@ class CreateAppointment < ActiveRecord::Migration
 		end
 
 		add_reference :appointments, :client, index: true, foreign_key: true
-		add_reference :appointments, :area, index: true, foreign_key: true
 	end
 end

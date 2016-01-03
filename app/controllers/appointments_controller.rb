@@ -25,7 +25,7 @@ class AppointmentsController < ApplicationController
   # POST /appointments.json
   def create
     @appointment = Appointment.new(appointment_params)
-
+    appointment_areas
     respond_to do |format|
       if @appointment.save
         format.html { redirect_to @appointment, notice: 'Το ραντεβού δημιουργήθηκε με επιτυχία.' }
@@ -41,6 +41,7 @@ class AppointmentsController < ApplicationController
   # PATCH/PUT /appointments/1.json
   def update
     respond_to do |format|
+      appointment_areas
       if @appointment.update(appointment_params)
         format.html { redirect_to @appointment, notice: 'Το ραντεβού άλλαξε με επιτυχία.' }
         format.json { render :show, status: :ok, location: @appointment }
@@ -74,6 +75,17 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.require(:appointment).permit(:price, :client_id, :area_id, :date)
+      params.require(:appointment).permit(:price, :client_id, :date, :notes, areas_attributes: [:id])
+    end
+
+    # Couldn't find out what's wrong with nested attributes - doing it 'manually'
+    def appointment_areas
+      @appointment.appointment_areas.destroy_all
+      @appointment_areas = @appointment.appointment_areas.build
+      ids = params[:appointment][:areas][:id].map(&:to_i)
+      ids.pop if ids[-1] == 0
+      ids.each do |id|
+        @appointment.appointment_areas.build(area_id: id)
+      end
     end
 end

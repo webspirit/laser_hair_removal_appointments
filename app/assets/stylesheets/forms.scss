@@ -15,3 +15,13 @@
 #appointment_notes {
   min-height: 150px;
 }
+
+.areas_labels {
+	font-weight: normal;
+	display: inline-block; 
+	width: 50%; 
+	float: left;
+}
+.form-group input.areas_checkboxes {
+	margin-right: 10px;
+}

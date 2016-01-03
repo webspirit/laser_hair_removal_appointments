@@ -28,9 +28,14 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :area_id, 'Περιοχή' %><br>
-    <%= f.collection_select :area_id, Area.order(:name), :id, :name, { include_blank: true }, {class: "col-sm-12 form-control" } %>
+    <%= f.label :areas, 'Περιοχή' %><br>
+    <%= f.fields_for :areas do |areas| %>
+      <%= areas.collection_check_boxes(:id, Area.all, :id, :name) do |b| %>
+        <%= b.label(class: "areas_labels") { b.check_box(class: "areas_checkboxes") + b.text } %>
+      <% end %>
+    <% end %>
   </div>
+
   <div class="form-group">
     <%= f.label :price, 'Τιμή' %><br>
     <%= f.text_field :price, class: "col-sm-12 form-control" %>

@@ -1,4 +1,4 @@
-<div class="col-md-4 col-sm-offset-4">
+<div class="col-md-8 col-sm-offset-2">
 	<p id="notice"><%= notice %></p>
 
   <h2 class="centered">Εμφάνιση ραντεβού</h2>
@@ -17,12 +17,16 @@
 
       <tr>
       	<th>Σημείο</th>
-      	<td><%= @appointment.try(:area).try(:name) %></td>
+      	<td><%= @appointment.try(:areas).map(&:name).join(', ') %></td>
       </tr>
 
       <tr>
       	<th>Τιμή</th>
       	<td><%= @appointment.price %></td>
+      </tr>
+      <tr>
+        <th>Σημειώσεις</th>
+        <td><%= @appointment.notes %></td>
       </tr>
     </tbody>
 	</table>

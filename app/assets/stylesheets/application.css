@@ -16,6 +16,7 @@
 
 body {
   background-color: #EAEAE6 !important;
+  padding-bottom: 40px;
 }
 
 .btn:visited { color: white; }
