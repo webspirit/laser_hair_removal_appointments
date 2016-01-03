@@ -17,7 +17,8 @@
 /tmp
 
 # Ignore db settings
-/config/database.yml
+config/database.yml
+db/seeds.rb
 
 # Version of ruby & gemset
 .ruby-gemset
@@ -30,3 +31,6 @@ pg_upgrade_utility.log
 
 # OS X storing custom attributes of a folder such as the position of icons or the choice of a background image.
 **/.DS_Store
+
+# Ssssh it's a secret
+config/secrets.yml
