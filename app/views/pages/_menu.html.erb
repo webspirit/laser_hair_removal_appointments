@@ -2,8 +2,8 @@
 	<div class="buttons">
 		<!-- Don't show links if you're at home or login page -->
 		<% unless params[:controller] == "pages" || params[:controller] == "devise/sessions" %>
-			<%= link_to 'Όλα τα ραντεβού', appointments_path, class: "btn btn-primary" %>
-			<%= link_to 'Όλοι οι ασθενείς', clients_path, class: "btn btn-primary" %>
+			<%= link_to 'Όλα τα ραντεβού', appointments_path, 'data-no-turbolink': true, class: "btn btn-primary" %>
+			<%= link_to 'Όλοι οι ασθενείς', clients_path, 'data-no-turbolink': true, class: "btn btn-primary" %>
 		<% end %>
 
 		<!-- Show logout link if user is logged in -->
